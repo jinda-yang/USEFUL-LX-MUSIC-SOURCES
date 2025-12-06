@@ -12,4 +12,8 @@
 最近发现了压缩包的源更新链接，网盘那边说免登陆下载有限制，暂停在网盘同步压缩包
 源地址https://houbowen.lanzouw.com/b00hqtgx9c
 
+
+TZB资源库：https://share.feijipan.com/s/zwZ5eaKS?code=4827
+
+
 音乐平台不易，请支持正版，低调使用！！！
