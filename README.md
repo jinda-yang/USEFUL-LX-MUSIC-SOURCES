@@ -19,7 +19,4 @@ TZB资源库：https://share.feijipan.com/s/zwZ5eaKS?code=4827
 git clone https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES
 git下载：https://git-scm.com/install/windows
 
-
-
-
-**音乐平台不易，请支持正版，低调使用！！！**
+**注意：音乐平台不易，请支持正版，低调使用！！！**
