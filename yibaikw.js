@@ -1,6 +1,6 @@
 /*!
  * @name yibai酷我流式
- * @description 内部音源，请勿泄露
+ * @description 一个音源
  * @version v114514
  * @author yibai
  */
