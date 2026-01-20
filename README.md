@@ -1,5 +1,5 @@
 # USEFUL-LX-MUSIC-SOURCES
-https://img.shields.io/badge/lx_music_source-blue
+  [![License](https://img.shields.io/badge/lx_music_source-blue)](LICENSE)
 搜集了自本人用LX music 以来使用的音源，持续更新~
 老网盘地址https://www.123912.com/s/6OBFTd-aHHZh （有Hi-fi示例）
 
