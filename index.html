@@ -5,75 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TZB679 | LX Music 音源分享</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TZB679 | LX Music 音源分享</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* 原有样式保持不变 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
-        }
-        /* ... 其余样式保持不变 ... */
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     
-    <!-- 添加音频元素（隐藏）并设置自动循环播放 -->
-    <audio id="background-music" loop autoplay>
-        <!-- 替换下面的 src 为播放音乐地址 -->
-        <source src="https://raw.githubusercontent.com/TZB679/USEFUL-LX-MUSIC-SOURCES/refs/heads/main/bgm.mp3" type="audio/mpeg">
-       
-    </audio>
-    
-    <script>
-        // 确保页面加载后自动播放音乐（处理浏览器自动播放策略）
-        document.addEventListener('DOMContentLoaded', function() {
-            const audio = document.getElementById('background-music');
-            // 尝试播放音乐，如果被浏览器阻止，则显示提示
-            audio.play().catch(function(error) {
-                console.log('自动播放被阻止，需要用户交互:', error);
-                // 可以在这里添加一个按钮让用户手动播放
-                // 例如：显示一个播放按钮
-            });
-        });
-    </script>
-</head>
-<body>
-    <!-- 原有页面内容保持不变 -->
-    <header>
-        <!-- ... 原有 header 内容 ... -->
-    </header>
-    
-    <div class="container">
-        <!-- ... 原有内容 ... -->
-    </div>
-    
-    <footer>
-        <!-- ... 原有 footer 内容 ... -->
-    </footer>
-    
-    <script>
-        // 可选：添加一个静音/播放控制按钮（如果需要）
-        // 可以在页面的某个位置添加一个控制按钮
-        // 例如在 footer 后添加：
-        // <button onclick="toggleMusic()">静音/播放</button>
-        
-        function toggleMusic() {
-            const audio = document.getElementById('background-music');
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
-            }
-        }
-    </script>
-</body>
-</html>
     <style>
         * {
             margin: 0;
@@ -87,6 +20,7 @@
             color: #333;
             line-height: 1.6;
             padding-bottom: 40px;
+            overflow-x: hidden;
         }
         
         .container {
@@ -95,6 +29,18 @@
             padding: 0 20px;
         }
         
+        /* 新增：背景动态粒子效果 */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        /* 修改header，添加动画 */
         header {
             background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             color: white;
@@ -103,6 +49,32 @@
             margin-bottom: 40px;
             border-radius: 0 0 20px 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* 添加header背景动画 */
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to right,
+                transparent 20%,
+                rgba(255, 255, 255, 0.1) 50%,
+                transparent 80%
+            );
+            transform: rotate(30deg);
+            animation: shine 8s infinite linear;
+            z-index: 0;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(30deg); }
+            100% { transform: translateX(100%) rotate(30deg); }
         }
         
         .blog-title {
@@ -110,6 +82,9 @@
             font-weight: 700;
             margin-bottom: 15px;
             letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInDown 1s ease-out;
         }
         
         .blog-subtitle {
@@ -117,6 +92,9 @@
             opacity: 0.9;
             max-width: 700px;
             margin: 0 auto 25px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out 0.3s both;
         }
         
         .publish-date {
@@ -125,6 +103,14 @@
             padding: 8px 20px;
             border-radius: 50px;
             font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out 0.6s both;
+            transition: transform 0.3s ease;
+        }
+        
+        .publish-date:hover {
+            transform: scale(1.05);
         }
         
         .content-section {
@@ -140,18 +126,54 @@
             }
         }
         
+        /* 卡片悬浮动画增强 */
         .card {
             background: white;
             border-radius: 15px;
             padding: 30px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             margin-bottom: 25px;
+            opacity: 0;
+            animation: fadeInRight 0.8s ease-out forwards;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* 为每个卡片添加不同的延迟动画 */
+        .card:nth-child(1) { animation-delay: 0.2s; }
+        .card:nth-child(2) { animation-delay: 0.4s; }
+        .card:nth-child(3) { animation-delay: 0.6s; }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #6a11cb, transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .card:hover::before {
+            left: 100%;
         }
         
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(106, 17, 203, 0.15);
+        }
+        
+        /* 图标动画 */
+        .card h2 i {
+            color: #6a11cb;
+            display: inline-block;
+            transition: transform 0.5s ease;
+        }
+        
+        .card:hover h2 i {
+            transform: rotate(360deg) scale(1.2);
         }
         
         .card h2 {
@@ -164,14 +186,11 @@
             gap: 10px;
         }
         
-        .card h2 i {
-            color: #6a11cb;
-        }
-        
         .intro-text {
             font-size: 1.1rem;
             margin-bottom: 20px;
             color: #444;
+            line-height: 1.8;
         }
         
         .protocol-list {
@@ -184,6 +203,11 @@
             border-bottom: 1px dashed #eee;
             display: flex;
             align-items: flex-start;
+            transition: padding-left 0.3s ease;
+        }
+        
+        .protocol-list li:hover {
+            padding-left: 15px;
         }
         
         .protocol-list li:last-child {
@@ -195,8 +219,14 @@
             margin-right: 12px;
             margin-top: 3px;
             flex-shrink: 0;
+            transition: transform 0.3s ease;
         }
         
+        .protocol-list li:hover i {
+            transform: scale(1.2);
+        }
+        
+        /* 链接项动画增强 */
         .link-section {
             margin-top: 25px;
         }
@@ -209,14 +239,33 @@
             border-radius: 10px;
             margin-bottom: 15px;
             border-left: 4px solid #6a11cb;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-decoration: none;
             color: #333;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .link-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .link-item:hover::after {
+            transform: translateX(100%);
         }
         
         .link-item:hover {
             background-color: #f0f0ff;
-            transform: translateX(5px);
+            transform: translateX(10px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(106, 17, 203, 0.1);
         }
         
         .link-item i {
@@ -224,6 +273,11 @@
             color: #6a11cb;
             margin-right: 15px;
             width: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .link-item:hover i {
+            transform: scale(1.2) rotate(5deg);
         }
         
         .link-text {
@@ -234,14 +288,23 @@
             display: block;
             margin-bottom: 5px;
             color: #2c3e50;
+            font-size: 1.1rem;
         }
         
         .link-text span {
             font-size: 0.9rem;
             color: #666;
             word-break: break-all;
+            display: block;
+            margin-top: 3px;
+            transition: color 0.3s ease;
         }
         
+        .link-item:hover .link-text span {
+            color: #6a11cb;
+        }
+        
+        /* 警告框动画 */
         .warning-box {
             background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
             border-radius: 10px;
@@ -250,6 +313,13 @@
             border-left: 5px solid #ff7e5f;
             display: flex;
             align-items: center;
+            animation: pulseWarning 2s infinite;
+            transform-origin: center;
+        }
+        
+        @keyframes pulseWarning {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
         }
         
         .warning-box i {
@@ -257,8 +327,15 @@
             color: #ff7e5f;
             margin-right: 20px;
             flex-shrink: 0;
+            animation: shake 0.5s ease-in-out infinite alternate;
         }
         
+        @keyframes shake {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+        
+        /* 侧边栏动画 */
         .sidebar {
             margin-top: 10px;
         }
@@ -269,6 +346,17 @@
             padding: 25px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
             margin-bottom: 25px;
+            opacity: 0;
+            animation: fadeInLeft 0.8s ease-out forwards;
+            transition: transform 0.3s ease;
+        }
+        
+        .sidebar-card:nth-child(1) { animation-delay: 0.3s; }
+        .sidebar-card:nth-child(2) { animation-delay: 0.5s; }
+        .sidebar-card:nth-child(3) { animation-delay: 0.7s; }
+        
+        .sidebar-card:hover {
+            transform: translateY(-5px);
         }
         
         .sidebar-card h3 {
@@ -283,6 +371,11 @@
         
         .sidebar-card h3 i {
             color: #6a11cb;
+            transition: transform 0.5s ease;
+        }
+        
+        .sidebar-card:hover h3 i {
+            transform: rotate(360deg);
         }
         
         .update-info {
@@ -290,6 +383,11 @@
             padding: 15px;
             border-radius: 10px;
             margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .update-info:hover {
+            transform: scale(1.03);
         }
         
         .update-date {
@@ -301,6 +399,7 @@
             gap: 8px;
         }
         
+        /* 标签动画 */
         .tag-list {
             display: flex;
             flex-wrap: wrap;
@@ -314,13 +413,45 @@
             border-radius: 50px;
             font-size: 0.85rem;
             color: #555;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
         
+        .tag::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background-color: rgba(106, 17, 203, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+        
+        .tag:hover {
+            background-color: #6a11cb;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(106, 17, 203, 0.2);
+        }
+        
+        .tag:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* 页脚动画 */
         footer {
             text-align: center;
             margin-top: 50px;
             color: #777;
             font-size: 0.9rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1s forwards;
         }
         
         .footer-line {
@@ -329,10 +460,142 @@
             background: linear-gradient(to right, #6a11cb, #2575fc);
             margin: 0 auto 20px;
             border-radius: 2px;
+            animation: expandWidth 1.5s ease-out 1.2s forwards;
+            transform-origin: left;
+            transform: scaleX(0);
+        }
+        
+        @keyframes expandWidth {
+            to { transform: scaleX(1); }
+        }
+        
+        /* 新增：滚动到顶部按钮 */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 100;
+            box-shadow: 0 5px 15px rgba(106, 17, 203, 0.3);
+        }
+        
+        .scroll-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(106, 17, 203, 0.4);
+        }
+        
+        /* 自定义动画 */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* 新增：音乐播放控制按钮 */
+        .music-control {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 100;
+            box-shadow: 0 5px 15px rgba(106, 17, 203, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .music-control:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(106, 17, 203, 0.4);
+        }
+        
+        .music-control.paused i {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
     </style>
+    
+    <!-- 添加音频元素（隐藏）并设置自动循环播放 -->
+    <audio id="background-music" loop>
+        <!-- 替换下面的 src 为你想要播放的音乐地址 -->
+        <source src="https://example.com/your-music.mp3" type="audio/mpeg">
+    </audio>
 </head>
 <body>
+    <!-- 背景粒子效果容器 -->
+    <div id="particles-js"></div>
+    
+    <!-- 音乐控制按钮 -->
+    <div class="music-control" id="music-control">
+        <i class="fas fa-music"></i>
+    </div>
+    
     <header>
         <div class="container">
             <h1 class="blog-title">LX Music 音源分享</h1>
@@ -483,6 +746,131 @@
             </p>
         </div>
     </footer>
+    
+    <!-- 滚动到顶部按钮 -->
+    <div class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- 引入粒子效果库 -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <script>
+        // 初始化粒子效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 粒子效果配置
+            particlesJS("particles-js", {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: "#6a11cb" },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.5, random: true },
+                    size: { value: 3, random: true },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: "#6a11cb",
+                        opacity: 0.2,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 2,
+                        direction: "none",
+                        random: true,
+                        straight: false,
+                        out_mode: "out",
+                        bounce: false
+                    }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: { enable: true, mode: "repulse" },
+                        onclick: { enable: true, mode: "push" }
+                    }
+                },
+                retina_detect: true
+            });
+            
+            // 音乐控制
+            const audio = document.getElementById('background-music');
+            const musicControl = document.getElementById('music-control');
+            
+            // 尝试播放音乐
+            audio.play().catch(function(error) {
+                console.log('自动播放被阻止，需要用户交互:', error);
+                musicControl.classList.add('paused');
+            });
+            
+            // 音乐控制按钮事件
+            musicControl.addEventListener('click', function() {
+                if (audio.paused) {
+                    audio.play();
+                    this.classList.remove('paused');
+                } else {
+                    audio.pause();
+                    this.classList.add('paused');
+                }
+            });
+            
+            // 滚动到顶部按钮
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.add('visible');
+                } else {
+                    scrollToTopBtn.classList.remove('visible');
+                }
+            });
+            
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // 标签点击效果
+            const tags = document.querySelectorAll('.tag');
+            tags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.9)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 300);
+                });
+            });
+            
+            // 链接点击效果
+            const links = document.querySelectorAll('.link-item');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // 添加点击反馈
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 300);
+                });
+            });
+            
+            // 卡片进入视口时的动画
+            const cards = document.querySelectorAll('.card, .sidebar-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
 </body>
 </html>
-
