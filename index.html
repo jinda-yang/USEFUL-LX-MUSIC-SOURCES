@@ -5,6 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TZB679 | LX Music 音源分享</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TZB679 | LX Music 音源分享</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 原有样式保持不变 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        /* ... 其余样式保持不变 ... */
+    </style>
+    
+    <!-- 添加音频元素（隐藏）并设置自动循环播放 -->
+    <audio id="background-music" loop autoplay>
+        <!-- 替换下面的 src 为你想要播放的音乐地址 -->
+        <source src="https://example.com/your-music.mp3" type="audio/mpeg">
+       
+    </audio>
+    
+    <script>
+        // 确保页面加载后自动播放音乐（处理浏览器自动播放策略）
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('background-music');
+            // 尝试播放音乐，如果被浏览器阻止，则显示提示
+            audio.play().catch(function(error) {
+                console.log('自动播放被阻止，需要用户交互:', error);
+                // 可以在这里添加一个按钮让用户手动播放
+                // 例如：显示一个播放按钮
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- 原有页面内容保持不变 -->
+    <header>
+        <!-- ... 原有 header 内容 ... -->
+    </header>
+    
+    <div class="container">
+        <!-- ... 原有内容 ... -->
+    </div>
+    
+    <footer>
+        <!-- ... 原有 footer 内容 ... -->
+    </footer>
+    
+    <script>
+        // 可选：添加一个静音/播放控制按钮（如果需要）
+        // 可以在页面的某个位置添加一个控制按钮
+        // 例如在 footer 后添加：
+        // <button onclick="toggleMusic()">静音/播放</button>
+        
+        function toggleMusic() {
+            const audio = document.getElementById('background-music');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+</body>
+</html>
     <style>
         * {
             margin: 0;
