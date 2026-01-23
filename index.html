@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TZB679 | LX Music 音源分享</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     
     <style>
         * {
@@ -35,7 +35,7 @@
             padding: 0 20px;
         }
         
-        /* 修复：调整粒子效果z-index */
+        /* 新增：背景动态粒子效果 */
         #particles-js {
             position: fixed;
             width: 100%;
@@ -46,7 +46,7 @@
             pointer-events: none;
         }
         
-        /* 修复：添加position: relative和z-index */
+        /* 修改header，添加动画 */
         header {
             background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             color: white;
@@ -57,10 +57,9 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             position: relative;
             overflow: hidden;
-            z-index: 10; /* 确保header在粒子效果上方 */
         }
         
-        /* 修复：确保伪元素不影响header内容 */
+        /* 添加header背景动画 */
         header::before {
             content: '';
             position: absolute;
@@ -76,18 +75,12 @@
             );
             transform: rotate(30deg);
             animation: shine 8s infinite linear;
-            z-index: -1; /* 确保伪元素在header内容下方 */
+            z-index: 0;
         }
         
         @keyframes shine {
             0% { transform: translateX(-100%) rotate(30deg); }
             100% { transform: translateX(100%) rotate(30deg); }
-        }
-        
-        /* 修复：确保header内所有内容都在伪元素上方 */
-        header .container {
-            position: relative;
-            z-index: 2;
         }
         
         .blog-title {
@@ -96,7 +89,7 @@
             margin-bottom: 15px;
             letter-spacing: 1px;
             position: relative;
-            z-index: 2;
+            z-index: 1;
             animation: fadeInDown 1s ease-out;
         }
         
@@ -106,7 +99,7 @@
             max-width: 700px;
             margin: 0 auto 25px;
             position: relative;
-            z-index: 2;
+            z-index: 1;
             animation: fadeInUp 1s ease-out 0.3s both;
         }
         
@@ -117,7 +110,7 @@
             border-radius: 50px;
             font-size: 0.9rem;
             position: relative;
-            z-index: 2;
+            z-index: 1;
             animation: fadeInUp 1s ease-out 0.6s both;
             transition: transform 0.3s ease;
         }
@@ -606,7 +599,7 @@
     <!-- 添加音频元素（隐藏）并设置自动循环播放 -->
     <audio id="background-music" loop>
         <!-- 替换下面的 src 为要播放的音乐地址 -->
-        <source src="https://ghproxy.net/https://raw.githubusercontent.com/TZB679/USEFUL-LX-MUSIC-SOURCES/refs/heads/main/bgm.mp3"  type="audio/mpeg">
+        <source src="https://ghproxy.net/https://raw.githubusercontent.com/TZB679/USEFUL-LX-MUSIC-SOURCES/refs/heads/main/bgm.mp3" type="audio/mpeg">
     </audio>
 </head>
 <body>
@@ -618,21 +611,16 @@
         <i class="fas fa-music"></i>
     </div>
     
-   <header style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); color: white; padding: 100px 0 80px; text-align: center;">
+ <header>
     <div class="container">
-        <h1 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 20px;">LX Music 音源分享</h1>
-        <p style="font-size: 1.2rem; margin: 0 auto 30px; max-width: 700px; font-weight: 500; color: rgba(255, 255, 255, 0.95);">
-            搜集了自本人使用 LX Music 以来整理的各种音源，持续更新中~
-        </p>
-        <div style="background-color: rgba(255, 255, 255, 0.25); 
-                   padding: 12px 30px; 
-                   border-radius: 50px; 
-                   font-size: 1rem;
-                   display: inline-block;">
-            📅 最后更新：2026年1月
+        <h1 class="blog-title">LX Music 音源分享</h1>
+        <p class="blog-subtitle" style="opacity: 1; font-weight: 500;">搜集了自本人使用 LX Music 以来整理的各种音源，持续更新中~</p>
+        <div class="publish-date" style="margin-top: 20px;">
+            <i class="far fa-calendar-alt"></i> 最后更新：2026年1月
         </div>
     </div>
 </header>
+    
     <div class="main-content">
         <div class="container">
             <div class="content-section">
@@ -644,12 +632,12 @@
                         </p>
                         
                         <div class="link-section">
-                            <a href="https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES/releases"  class="link-item" target="_blank">
+                            <a href="https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES/releases" class="link-item" target="_blank">
                                 <i class="fas fa-archive"></i>
                                 <div class="link-text">
                                     <strong>下载</strong>
-                                    <span>https://www.123912.com/s/6OBFTd-aHHZh  （包含 Hi-Fi 示例）</span>
-                                    <span>https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES/releases</span> 
+                                    <span>https://www.123912.com/s/6OBFTd-aHHZh （包含 Hi-Fi 示例）</span>
+                                    <span>https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES/releases</span>
                                 </div>
                             </a>
                         </div>
@@ -688,7 +676,7 @@
                         </p>
                         
                        <div class="link-section">
-                            <a href="https://ghproxy.net/https://raw.githubusercontent.com/TZB679/USEFUL-LX-MUSIC-SOURCES/refs/heads/main/%5B%E4%B8%8D%E7%A8%B3%E5%AE%9A%5DLX(%E9%9D%9E%E5%AE%98%E6%96%B9)%E5%85%AC%E4%BC%97%E5%8F%B7%E9%9F%B3%E6%BA%90%20v4.js"  class="link-item" target="_blank">
+                            <a href="https://ghproxy.net/https://raw.githubusercontent.com/TZB679/USEFUL-LX-MUSIC-SOURCES/refs/heads/main/%5B%E4%B8%8D%E7%A8%B3%E5%AE%9A%5DLX(%E9%9D%9E%E5%AE%98%E6%96%B9)%E5%85%AC%E4%BC%97%E5%8F%B7%E9%9F%B3%E6%BA%90%20v4.js" class="link-item" target="_blank">
                                 <i class="fas fa-cloud-download-alt"></i>
                                 <div class="link-text">
                                     <strong>直接可用的音源（点击下载）</strong>
@@ -696,37 +684,37 @@
                                 </div>
                             </a>
                         </div>
- 
+
                         <div class="link-section">
-                            <a href="https://houboven.lanzouw.com/b00hqtgx9c"  class="link-item" target="_blank">
+                            <a href="https://houboven.lanzouw.com/b00hqtgx9c" class="link-item" target="_blank">
                                 <i class="fas fa-cloud-download-alt"></i>
                                 <div class="link-text">
                                     <strong>源更新链接（最即时的更新，由Hobonn整理）</strong>
-                                    <span>https://houboven.lanzouw.com/b00hqtgx9c</span> 
+                                    <span>https://houboven.lanzouw.com/b00hqtgx9c</span>
                                 </div>
                             </a>
                             
-                            <a href="https://share.feijipan.com/s/zwZ5eaKS?code=4827"  class="link-item" target="_blank">
+                            <a href="https://share.feijipan.com/s/zwZ5eaKS?code=4827" class="link-item" target="_blank">
                                 <i class="fas fa-database"></i>
                                 <div class="link-text">
                                     <strong>TZB资源库</strong>
-                                    <span>https://share.feijipan.com/s/zwZ5eaKS?code=4828</span> 
+                                    <span>https://share.feijipan.com/s/zwZ5eaKS?code=4828</span>
                                 </div>
                             </a>
                             
-                            <a href="https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES"  class="link-item" target="_blank">
+                            <a href="https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES" class="link-item" target="_blank">
                                 <i class="fab fa-github"></i>
                                 <div class="link-text">
                                     <strong>使用git命令（直接打开进入源代码页）</strong>
-                                    <span>git clone https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES</span> 
+                                    <span>git clone https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES</span>
                                 </div>
                             </a>
                             
-                            <a href="https://share.feijipan.com/s/4MW2urSI"  class="link-item" target="_blank">
+                            <a href="https://share.feijipan.com/s/4MW2urSI" class="link-item" target="_blank">
                                 <i class="fas fa-code-branch"></i>
                                 <div class="link-text">
                                     <strong>lx music 电脑魔改版（独家），支持自定义播放器</strong>
-                                    <span>https://share.feijipan.com/s/4MW2urSI</span> 
+                                    <span>https://share.feijipan.com/s/4MW2urSI</span>
                                 </div>
                             </a>
                         </div>
@@ -745,9 +733,9 @@
                         <h3><i class="fas fa-info-circle"></i> 最新更新</h3>
                         <div class="update-info">
                             <div class="update-date">
-                                <i class="far fa-calendar-check"></i> 提醒：2026年1月 
+                                <i class="far fa-calendar-check"></i> 提醒：2026年1月
                             </div>
-                            <p>目前最新地址：https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES/releases 以及https://houboven.lanzouw.com/b00hqtgx9c</p> 
+                            <p>目前最新地址：https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES/releases以及https://houboven.lanzouw.com/b00hqtgx9c</p>
                         </div>
                         <p>本音源集合持续更新，建议定期访问本页面获取最新信息。</p>
                     </div>
@@ -769,12 +757,12 @@
                             <p>
                                 <i class="fas fa-envelope" style="color: #6a11cb; margin-right: 8px;"></i> 
                                 联系方式：通过 GitHub 项目 
-                                <a href="https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES/issues"  
+                                <a href="https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES/issues" 
                                    target="_blank" 
                                    style="color: #2575fc; text-decoration: none; font-weight: 500; 
                                           border-bottom: 1px solid rgba(37, 117, 252, 0.3); padding-bottom: 1px;
                                           transition: all 0.3s ease;">
-                                    Issues 
+                                    Issues
                                 </a>
                             </p>
                         </div>
@@ -789,7 +777,7 @@
             <div class="footer-line"></div>
             <p>© 2026 TZB679 音源分享页面 | 仅供学习交流使用 | 请支持正版音乐</p>
             <p style="margin-top: 10px; font-size: 0.8rem;">
-                本页面仅为个人整理分享，不用于任何商业用途 
+                本页面仅为个人整理分享，不用于任何商业用途
             </p>
         </div>
     </footer>
@@ -800,12 +788,12 @@
     </div>
     
     <!-- 引入粒子效果库 -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
     <script>
-        // 初始化粒子效果 
+        // 初始化粒子效果
         document.addEventListener('DOMContentLoaded', function() {
-            // 粒子效果配置 
+            // 粒子效果配置
             particlesJS("particles-js", {
                 particles: {
                     number: { value: 80, density: { enable: true, value_area: 800 } },
@@ -818,7 +806,7 @@
                         distance: 150,
                         color: "#6a11cb",
                         opacity: 0.2,
-                        width: 1 
+                        width: 1
                     },
                     move: {
                         enable: true,
@@ -827,7 +815,7 @@
                         random: true,
                         straight: false,
                         out_mode: "out",
-                        bounce: false 
+                        bounce: false
                     }
                 },
                 interactivity: {
@@ -837,20 +825,20 @@
                         onclick: { enable: true, mode: "push" }
                     }
                 },
-                retina_detect: true 
+                retina_detect: true
             });
             
-            // 音乐控制 
+            // 音乐控制
             const audio = document.getElementById('background-music');
             const musicControl = document.getElementById('music-control');
             
-            // 尝试播放音乐 
+            // 尝试播放音乐
             audio.play().catch(function(error) {
                 console.log('自动播放被阻止，需要用户交互:', error);
                 musicControl.classList.add('paused');
             });
             
-            // 音乐控制按钮事件 
+            // 音乐控制按钮事件
             musicControl.addEventListener('click', function() {
                 if (audio.paused) {
                     audio.play();
@@ -861,7 +849,7 @@
                 }
             });
             
-            // 滚动到顶部按钮 
+            // 滚动到顶部按钮
             const scrollToTopBtn = document.getElementById('scrollToTop');
             
             window.addEventListener('scroll', function() {
@@ -879,7 +867,7 @@
                 });
             });
             
-            // 标签点击效果 
+            // 标签点击效果
             const tags = document.querySelectorAll('.tag');
             tags.forEach(tag => {
                 tag.addEventListener('click', function() {
@@ -890,11 +878,11 @@
                 });
             });
             
-            // 链接点击效果 
+            // 链接点击效果
             const links = document.querySelectorAll('.link-item');
             links.forEach(link => {
                 link.addEventListener('click', function(e) {
-                    // 添加点击反馈 
+                    // 添加点击反馈
                     this.style.transform = 'scale(0.98)';
                     setTimeout(() => {
                         this.style.transform = '';
@@ -902,7 +890,7 @@
                 });
             });
             
-            // 卡片进入视口时的动画 
+            // 卡片进入视口时的动画
             const cards = document.querySelectorAll('.card, .sidebar-card');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -918,7 +906,7 @@
                 observer.observe(card);
             });
             
-            // Issues链接悬停效果 
+            // Issues链接悬停效果
             const issueLink = document.querySelector('.sidebar-card a');
             if (issueLink) {
                 issueLink.addEventListener('mouseenter', function() {
