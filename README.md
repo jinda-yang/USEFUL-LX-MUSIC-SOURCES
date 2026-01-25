@@ -21,6 +21,6 @@ git clone https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES
 git下载：https://git-scm.com/install/windows
 
 ## Star星图
-[![Stargazers over time](https://starchart.cc/TZB679/USEFUL-LX-MUSIC-SOURCES.svg?variant=adaptive)
+![Stargazers over time](https://starchart.cc/TZB679/USEFUL-LX-MUSIC-SOURCES.svg?variant=adaptive)
 
 **注意：音乐平台不易，请支持正版，低调使用！！！**
