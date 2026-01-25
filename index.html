@@ -15,18 +15,12 @@
             font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
         }
         
-        html, body {
-            height: 100%;
-        }
-        
         body {
             background-color: #f8f9fa;
             color: #333;
             line-height: 1.6;
+            padding-bottom: 40px;
             overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
         
         .container {
@@ -117,11 +111,6 @@
         
         .publish-date:hover {
             transform: scale(1.05);
-        }
-        
-        .main-content {
-            flex: 1 0 auto;
-            padding-bottom: 40px;
         }
         
         .content-section {
@@ -455,16 +444,12 @@
             height: 100%;
         }
         
-        /* 页脚修复 */
+        /* 页脚动画 */
         footer {
             text-align: center;
+            margin-top: 50px;
             color: #777;
             font-size: 0.9rem;
-            background-color: #fff;
-            padding: 30px 0;
-            margin-top: auto;
-            border-top: 1px solid #eee;
-            flex-shrink: 0;
             opacity: 0;
             animation: fadeInUp 1s ease-out 1s forwards;
         }
@@ -611,164 +596,159 @@
         <i class="fas fa-music"></i>
     </div>
     
- <header>
-    <div class="container">
-        <h1 class="blog-title">LX Music 音源分享</h1>
-        <p class="blog-subtitle" style="opacity: 1; font-weight: 500;">搜集了自本人使用 LX Music 以来整理的各种音源，持续更新中~</p>
-        <div class="publish-date" style="margin-top: 20px;">
-            <i class="far fa-calendar-alt"></i> 最后更新：2026年1月
-        </div>
-    </div>
-</header>
-    
-    <div class="main-content">
+    <header>
         <div class="container">
-            <div class="content-section">
-                <main>
-                    <div class="card">
-                        <h2><i class="fas fa-compact-disc"></i> 音源介绍</h2>
-                        <p class="intro-text">
-                            这里整理了我使用 LX Music 以来搜集的各种音源，包括高质量 Hi-Fi 示例。所有音源均由社区开发者创作，本人仅做整理分享。音乐平台不易，请支持正版，低调使用！
-                        </p>
-                        
-                        <div class="link-section">
-                            <a href="https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES/releases" class="link-item" target="_blank">
-                                <i class="fas fa-archive"></i>
-                                <div class="link-text">
-                                    <strong>下载</strong>
-                                    <span>https://www.123912.com/s/6OBFTd-aHHZh （包含 Hi-Fi 示例）</span>
-                                    <span>https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES/releases</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <h2><i class="fas fa-file-contract"></i> 使用协议（必读）</h2>
-                        <ul class="protocol-list">
-                            <li>
-                                <i class="fas fa-user-check"></i>
-                                <span>本压缩包由 "Hobonn" 倾情整理，TZB679 发布~</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-ban"></i>
-                                <span>提供的所有音源并非本人创作，所有音源严禁用于商业用途~</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-shield-alt"></i>
-                                <span>本人仅整理分享，并不接受任何投诉信息~</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-gavel"></i>
-                                <span>本人所作不触及法律界限，请不要散传谣言~</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-heart"></i>
-                                <span>在此致敬并感谢所有音源开发者的努力与付出~</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="card">
-                        <h2><i class="fas fa-download"></i> 资源下载</h2>
-                        <p class="intro-text">
-                            最近发现了压缩包的源更新链接，老网盘的免登陆下载有限制，暂停在该网盘同步压缩包。以下是可用的下载方式：
-                        </p>
-                        
-                       <div class="link-section">
-                            <a href="https://ghproxy.net/https://raw.githubusercontent.com/TZB679/USEFUL-LX-MUSIC-SOURCES/refs/heads/main/%5B%E4%B8%8D%E7%A8%B3%E5%AE%9A%5DLX(%E9%9D%9E%E5%AE%98%E6%96%B9)%E5%85%AC%E4%BC%97%E5%8F%B7%E9%9F%B3%E6%BA%90%20v4.js" class="link-item" target="_blank">
-                                <i class="fas fa-cloud-download-alt"></i>
-                                <div class="link-text">
-                                    <strong>直接可用的音源（点击下载）</strong>
-                                    <span>直接可用，畅享音乐带来的美好体验</span>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="link-section">
-                            <a href="https://houboven.lanzouw.com/b00hqtgx9c" class="link-item" target="_blank">
-                                <i class="fas fa-cloud-download-alt"></i>
-                                <div class="link-text">
-                                    <strong>源更新链接（最即时的更新，由Hobonn整理）</strong>
-                                    <span>https://houboven.lanzouw.com/b00hqtgx9c</span>
-                                </div>
-                            </a>
-                            
-                            <a href="https://share.feijipan.com/s/zwZ5eaKS?code=4827" class="link-item" target="_blank">
-                                <i class="fas fa-database"></i>
-                                <div class="link-text">
-                                    <strong>TZB资源库</strong>
-                                    <span>https://share.feijipan.com/s/zwZ5eaKS?code=4828</span>
-                                </div>
-                            </a>
-                            
-                            <a href="https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES" class="link-item" target="_blank">
-                                <i class="fab fa-github"></i>
-                                <div class="link-text">
-                                    <strong>使用git命令（直接打开进入源代码页）</strong>
-                                    <span>git clone https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES</span>
-                                </div>
-                            </a>
-                            
-                            <a href="https://share.feijipan.com/s/4MW2urSI" class="link-item" target="_blank">
-                                <i class="fas fa-code-branch"></i>
-                                <div class="link-text">
-                                    <strong>lx music 电脑魔改版（独家），支持自定义播放器</strong>
-                                    <span>https://share.feijipan.com/s/4MW2urSI</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="warning-box">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <div>
-                            <strong>重要提醒：</strong> 音乐平台不易，请支持正版音乐，本资源仅供学习交流使用，请低调使用！！！
-                        </div>
-                    </div>
-                </main>
-                
-                <aside class="sidebar">
-                    <div class="sidebar-card">
-                        <h3><i class="fas fa-info-circle"></i> 最新更新</h3>
-                        <div class="update-info">
-                            <div class="update-date">
-                                <i class="far fa-calendar-check"></i> 提醒：2026年1月
-                            </div>
-                            <p>目前最新地址：https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES/releases以及https://houboven.lanzouw.com/b00hqtgx9c</p>
-                        </div>
-                        <p>本音源集合持续更新，建议定期访问本页面获取最新信息。</p>
-                    </div>
-                    
-                    <div class="sidebar-card">
-                        <h3><i class="fas fa-tags"></i> 标签分类</h3>
-                        <div class="tag-list">
-                            <span class="tag">LX Music</span>
-                            <span class="tag">音乐分享</span>
-                            <span class="tag">开源项目</span>
-                            <span class="tag">资源整理</span>
-                        </div>
-                    </div>
-                    
-                    <div class="sidebar-card">
-                        <h3><i class="fas fa-user"></i> 关于本人</h3>
-                        <p>音乐爱好者，喜欢整理和分享实用资源。专注于 LX Music 音源的收集与整理，致力于为音乐爱好者提供高质量的音源体验。</p>
-                        <div style="margin-top: 15px;">
-                            <p>
-                                <i class="fas fa-envelope" style="color: #6a11cb; margin-right: 8px;"></i> 
-                                联系方式：通过 GitHub 项目 
-                                <a href="https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES/issues" 
-                                   target="_blank" 
-                                   style="color: #2575fc; text-decoration: none; font-weight: 500; 
-                                          border-bottom: 1px solid rgba(37, 117, 252, 0.3); padding-bottom: 1px;
-                                          transition: all 0.3s ease;">
-                                    Issues
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                </aside>
+            <h1 class="blog-title">LX Music 音源分享</h1>
+            <p class="blog-subtitle">搜集了自本人使用 LX Music 以来整理的各种音源，持续更新中~</p>
+            <div class="publish-date">
+                <i class="far fa-calendar-alt"></i> 最后更新：2026年1月
             </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="content-section">
+            <main>
+                <div class="card">
+                    <h2><i class="fas fa-compact-disc"></i> 音源介绍</h2>
+                    <p class="intro-text">
+                        这里整理了我使用 LX Music 以来搜集的各种音源，包括高质量 Hi-Fi 示例。所有音源均由社区开发者创作，本人仅做整理分享。音乐平台不易，请支持正版，低调使用！
+                    </p>
+                    
+                    <div class="link-section">
+                        <a href="https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES/releases" class="link-item" target="_blank">
+                            <i class="fas fa-archive"></i>
+                            <div class="link-text">
+                                <strong>下载</strong>
+                                <span>https://www.123912.com/s/6OBFTd-aHHZh （包含 Hi-Fi 示例）</span>
+                                <span>https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES/releases</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2><i class="fas fa-file-contract"></i> 使用协议（必读）</h2>
+                    <ul class="protocol-list">
+                        <li>
+                            <i class="fas fa-user-check"></i>
+                            <span>本压缩包由 "Hobonn" 倾情整理，TZB679 发布~</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-ban"></i>
+                            <span>提供的所有音源并非本人创作，所有音源严禁用于商业用途~</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-shield-alt"></i>
+                            <span>本人仅整理分享，并不接受任何投诉信息~</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-gavel"></i>
+                            <span>本人所作不触及法律界限，请不要散传谣言~</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-heart"></i>
+                            <span>在此致敬并感谢所有音源开发者的努力与付出~</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h2><i class="fas fa-download"></i> 资源下载</h2>
+                    <p class="intro-text">
+                        2025.12 发现了压缩包的源更新链接，老网盘的免登陆下载有限制，暂停在该网盘同步压缩包。以下是可用的下载方式：
+                    </p>
+                    
+                   <div class="link-section">
+                        <a href="https://ghproxy.net/https://raw.githubusercontent.com/TZB679/USEFUL-LX-MUSIC-SOURCES/refs/heads/main/%5B%E4%B8%8D%E7%A8%B3%E5%AE%9A%5DLX(%E9%9D%9E%E5%AE%98%E6%96%B9)%E5%85%AC%E4%BC%97%E5%8F%B7%E9%9F%B3%E6%BA%90%20v4.js" class="link-item" target="_blank">
+                            <i class="fas fa-cloud-download-alt"></i>
+                            <div class="link-text">
+                                <strong>直接可用的音源（点击下载）</strong>
+                                <span>直接可用，畅享音乐带来的美好体验</span>
+                            </div>
+                        </a>
+
+
+                    <div class="link-section">
+                        <a href="https://houboven.lanzouw.com/b00hqtgx9c" class="link-item" target="_blank">
+                            <i class="fas fa-cloud-download-alt"></i>
+                            <div class="link-text">
+                                <strong>源更新链接（最即时的更新，由Hobonn整理）</strong>
+                                <span>https://houboven.lanzouw.com/b00hqtgx9c</span>
+                            </div>
+                        </a>
+                        
+                        <a href="https://share.feijipan.com/s/zwZ5eaKS?code=4827" class="link-item" target="_blank">
+                            <i class="fas fa-database"></i>
+                            <div class="link-text">
+                                <strong>TZB资源库</strong>
+                                <span>各类软件资源等你下载~</span>
+                            </div>
+                        </a>
+                        
+                        <a href="https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES" class="link-item" target="_blank">
+                            <i class="fab fa-github"></i>
+                            <div class="link-text">
+                                <strong>使用git命令（直接打开进入源代码页）</strong>
+                                <span>git clone https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES</span>
+                            </div>
+                        </a>
+                        
+                        <a href="https://share.feijipan.com/s/4MW2urSI" class="link-item" target="_blank">
+                            <i class="fas fa-code-branch"></i>
+                            <div class="link-text">
+                                <strong>lx music 电脑魔改版（独家），支持自定义播放器</strong>
+                                <span>全新播放器样式，带来更美妙的欣赏体验</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="warning-box">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div>
+                        <strong>重要提醒：</strong> 音乐平台不易，请支持正版音乐，本资源仅供学习交流使用，请低调使用！！！
+                    </div>
+                </div>
+            </main>
+            
+            <aside class="sidebar">
+                <div class="sidebar-card">
+                    <h3><i class="fas fa-info-circle"></i> 最新更新</h3>
+                    <div class="update-info">
+                        <div class="update-date">
+                            <i class="far fa-calendar-check"></i> 提醒：2026年1月
+                        </div>
+                        <p>目前最新地址：https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES/releases以及https://houboven.lanzouw.com/b00hqtgx9c</p>
+                    </div>
+                    <p>本音源集合持续更新，建议定期访问本页面获取最新信息。</p>
+                   </div>
+                    <p>感谢guoyue2010（https://github.com/guoyue2010/lxmusic-）对本项目的大力支持！</p>
+                </div>
+                
+                        </div>
+                        <p> 本页面仅供学习交流使用，请勿大肆宣传！！！</p>
+                    </div>
+                   
+
+                <div class="sidebar-card">
+                    <h3><i class="fas fa-tags"></i> 标签分类</h3>
+                    <div class="tag-list">
+                        <span class="tag">LX Music</span>
+                        <span class="tag">音乐分享</span>
+                        <span class="tag">开源项目</span>
+                        <span class="tag">资源整理</span>
+                    </div>
+                </div>
+                
+                <div class="sidebar-card">
+                    <h3><i class="fas fa-user"></i> 关于本人</h3>
+                    <p>音乐爱好者，喜欢整理和分享实用资源。专注于 LX Music 音源的收集与整理，致力于为音乐爱好者提供高质量的音源体验。</p>
+                    <div style="margin-top: 15px;">
+                        <p><i class="fas fa-envelope" style="color: #6a11cb; margin-right: 8px;"></i> 联系方式：有问题进入guoyue2010的QQ群：704034242</p>
+                    </div>
+                </div>
+            </aside>
         </div>
     </div>
     
@@ -905,21 +885,6 @@
             cards.forEach(card => {
                 observer.observe(card);
             });
-            
-            // Issues链接悬停效果
-            const issueLink = document.querySelector('.sidebar-card a');
-            if (issueLink) {
-                issueLink.addEventListener('mouseenter', function() {
-                    this.style.color = '#6a11cb';
-                    this.style.borderBottomColor = '#6a11cb';
-                    this.style.borderBottomWidth = '2px';
-                });
-                issueLink.addEventListener('mouseleave', function() {
-                    this.style.color = '#2575fc';
-                    this.style.borderBottomColor = 'rgba(37, 117, 252, 0.3)';
-                    this.style.borderBottomWidth = '1px';
-                });
-            }
         });
     </script>
 </body>
