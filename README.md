@@ -13,9 +13,6 @@
 2025.12 最近发现了压缩包的源更新链接，网盘那边说免登陆下载有限制，暂停在网盘同步压缩包
 源地址https://houbowen.lanzouw.com/b00hqtgx9c
 
-
-TZB资源库：https://share.feijipan.com/s/zwZ5eaKS?code=4827
-
 本项目支持git,命令：
 git clone https://github.com/TZB679/USEFUL-LX-MUSIC-SOURCES
 git下载：https://git-scm.com/install/windows
