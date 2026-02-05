@@ -1,0 +1,6 @@
+guoyue2010自制音源更新
+音源更新至V2版本，抛弃六音接口，使用https://github.com/MeoProject/lx-music-api-server提供的接口，同时感谢DeepSeek提供的音源名称
+自制音源名为“聆川”，正如他的名字一样，暗含沉浸于音乐的深意
+到目前为止，自制音源还是仅支持网易，其他平台预计在年底补充完整
+V1源停止使用！请自觉换新源
+在线导入及本地下载地址：http://sj.frp.one:52291/script?key=guoyue2010

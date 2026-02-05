@@ -1,0 +1,27 @@
+（数据恢复）
+ikun音源
+支持软件：MusicFree, LX Music
+支持调用方式：OpenAPI
+
+公益版使用方法：
+把?key=卡密删了
+赞助版卡密购买:
+https://shop.ikunshare.com
+
+支持使用：网易云，咪咕，酷我
+
+网络垃圾的情况下用http://160.202.237.98:9000，不会用别用
+
+LX Music脚本下载(在线导入)地址：
+http://api.ikunshare.com/script?key=卡密
+https://api.ikunshare.com/script?key=卡密
+
+MusicFree订阅地址：
+http://api.ikunshare.com/subscription_卡密.json
+https://api.ikunshare.com/subscription_卡密.json
+
+需要使用音乐下载器的，访问这个绑定Device ID:
+http://api.ikunshare.com/bind
+https://api.ikunshare.com/bind
+
+备用域名：music.ikun0014.top
