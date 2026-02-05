@@ -21,15 +21,4 @@ git下载：https://git-scm.com/install/windows
 ![Stargazers over time](https://starchart.cc/TZB679/USEFUL-LX-MUSIC-SOURCES.svg?variant=adaptive)
 
 
-<table>
-  <tr>
-    <td>
-      <img alt="SignPath" src="https://signpath.org/assets/favicon-50x50.png" />
-    </td>
-    <td>
-    Free code signing on Windows provided by <a href="https://signpath.io">SignPath.io</a>, certficate by <a href="https://signpath.org/">SignPath Foundation</a>
-    </td>
-  </tr> 
-  <tr>
-
 **注意：音乐平台不易，请支持正版，低调使用！！！**
